@@ -27,13 +27,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty(trim($_POST["event_date"]))) {
-        $event_date_err = "Veuillez entrer une date pour l'fête.";
+        $event_date_err = "Veuillez entrer une date pour la fête.";
     } else {
         $event_date = trim($_POST["event_date"]);
     }
 
     if (empty(trim($_POST["location"]))) {
-        $location_err = "Veuillez entrer un lieu pour l'fête.";
+        $location_err = "Veuillez entrer un lieu pour la fête.";
     } else {
         $location = trim($_POST["location"]);
     }
@@ -111,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include('includes/header.php'); ?>
 
     <div class="container">
-        <h2>Créer un Nouvel fête</h2>
+        <h2>Créer une Nouvelle fête</h2>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
             <div>
                 <label>Titre de la fête</label>
@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <span><?php echo $title_err; ?></span>
             </div>
             <div>
-                <label>Descripton</label>
+                <label>Description</label>
                 <textarea name="description" rows="5" collumn="3"><?php echo $description; ?></textarea>
                 <span><?php echo $description_err; ?></span>
             </div>
@@ -129,17 +129,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <span><?php echo $event_date_err; ?></span>
             </div>
             <div>
-                <label>Liieu</label>
+                <label>Lieu</label>
                 <input type="text" name="location" maxlength="60" value="<?php echo $location; ?>">
                 <span><?php echo $location_err; ?></span>
             </div>
             <div>
-                <label>fête Public</label>
+                <label>Fête Publique</label>
                 <input type="checkbox" name="is_public" <?php echo $is_public ? 'checked' : ''; ?>>
             </div>
             <div>
                 <label>Image de la fête</label>
-                <label for="fileInput" class="custom-file-input">Selectionne une photo</label>
+                <label for="fileInput" class="custom-file-input">Selectionnez une photo</label>
                 <input type="file" id="fileInput" name="profile_image" accept="image/*" style="display: none;">
                 <span><?php echo $image_err; ?></span>
             </div>
